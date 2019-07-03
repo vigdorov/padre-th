@@ -1,0 +1,49 @@
+h1{
+    text-align: center;
+    margin-top:20px;
+}
+h2{
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    width:80%;
+    margin-left:10%;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 5px double black;
+    width:300px;
+    height:200px;
+    margin:20px;
+    padding:0 5px;
+}
+.info{
+    border: 2px dashed black;
+    width:240px;
+    height:80px;
+    text-align: center;
+    padding-top:15px;
+}
+p{
+    text-align: center;
+}
+hr{
+    color: black;
+}
+h3{
+
+}
+.red{
+    background: red;
+}
+.date {
+    align-self: end;
+    font-weight: bold;
+}
