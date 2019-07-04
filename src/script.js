@@ -30,23 +30,28 @@ const data = [
     date: '12.09.2018'
   },
 ];
-    data.forEach(function (item) {
 
-        let container = document.getElementById('container');
-        let card = document.createElement('div');
-        card.className = "card";
-        container.appendChild(card);
-        let title = document.createElement('h3');
-        title.textContent = item.title;
-        card.appendChild(title);
-        let info = document.createElement('div');
-        info.className = "info";
-        info.textContent = item.text;
-        card.appendChild(info);
-        let dateLine = document.createElement('i');
-        dateLine.className = "date";
-        dateLine.textContent = item.date;
-        card.appendChild(dateLine);
+data.forEach(function (item) {
 
-    });
+  let container = document.getElementById('container');
+
+  let card = document.createElement('div');
+  card.className = "card";
+  container.appendChild(card);
+
+  let title = document.createElement('h3');
+  title.textContent = item.title;
+  card.appendChild(title);
+
+  let info = document.createElement('div');
+  info.className = "info";
+  info.textContent = item.text;
+  card.appendChild(info);
+
+  let dateLine = document.createElement('i');
+  dateLine.className = "date";
+  dateLine.textContent = item.date;
+  card.appendChild(dateLine);
+
+});
 
