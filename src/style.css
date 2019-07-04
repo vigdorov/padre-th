@@ -1,3 +1,6 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
 h1{
     text-align: center;
     margin-top:20px;
@@ -9,41 +12,41 @@ h2{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    position: relative;
     width:80%;
     margin-left:10%;
+
 }
 .card{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    border: 5px double black;
+    border-radius:5px ;
+    box-shadow: 0 3px 5px 3px gray;
     width:300px;
-    height:200px;
+    height:160px;
     margin:20px;
-    padding:0 5px;
+    padding:5px 10px;
+    position: relative;
 }
 .info{
-    border: 2px dashed black;
-    width:240px;
-    height:80px;
-    text-align: center;
     padding-top:15px;
+    border-top: 2px solid lightgray;
 }
 p{
     text-align: center;
 }
 hr{
-    color: black;
+    size: 3px;
 }
 h3{
-
+    margin:5px;
 }
 .red{
     background: red;
 }
 .date {
-    align-self: end;
     font-weight: bold;
+    position: absolute;
+    top:80%;
+    left:70%;
+    color:gray;
 }
