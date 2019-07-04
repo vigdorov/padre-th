@@ -30,26 +30,23 @@ const data = [
     date: '12.09.2018'
   },
 ];
-function inner() {
-    for (let i = 0; i < data.length; i++) {
+    data.forEach(function (item) {
 
         let container = document.getElementById('container');
         let card = document.createElement('div');
         card.className = "card";
         container.appendChild(card);
         let title = document.createElement('h3');
-        title.textContent = data[i].title;
+        title.textContent = item.title;
         card.appendChild(title);
         let info = document.createElement('div');
         info.className = "info";
-        info.textContent = data[i].text;
+        info.textContent = item.text;
         card.appendChild(info);
         let dateLine = document.createElement('i');
         dateLine.className = "date";
-        dateLine.textContent = data[i].date;
+        dateLine.textContent = item.date;
         card.appendChild(dateLine);
 
-    }
-}
-let func = inner;
-func();
+    });
+
