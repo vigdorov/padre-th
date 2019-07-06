@@ -1,6 +1,6 @@
 const data = [
   {
-    title: 'Заголовок 2342355',
+    title: 'Заголовок 1',
     text: 'Текст для карточки номер 1, которая содержит текст',
     date: '12.09.2018'
   },
@@ -31,27 +31,54 @@ const data = [
   },
 ];
 
-data.forEach(function (item) {
+let counter = 7;
 
-  let container = document.getElementById('container');
+function render() {
 
-  let card = document.createElement('div');
-  card.className = "card";
-  container.appendChild(card);
+    let container = document.getElementById('container');
+    container.innerHTML = "";
+    data.forEach(function (item, index) {
 
-  let title = document.createElement('h3');
-  title.textContent = item.title;
-  card.appendChild(title);
+        let card = document.createElement('div');
+        card.className = "card";
+        container.appendChild(card);
 
-  let info = document.createElement('div');
-  info.className = "info";
-  info.textContent = item.text;
-  card.appendChild(info);
+        let title = document.createElement('h3');
+        title.textContent = item.title;
+        card.appendChild(title);
 
-  let dateLine = document.createElement('i');
-  dateLine.className = "date";
-  dateLine.textContent = item.date;
-  card.appendChild(dateLine);
+        let info = document.createElement('div');
+        info.className = "info";
+        info.textContent = item.text;
+        card.appendChild(info);
 
-});
+        let dateLine = document.createElement('i');
+        dateLine.className = "date";
+        dateLine.textContent = item.date;
+        card.appendChild(dateLine);
 
+        let delBtn = document.createElement('button');
+        delBtn.className = "delete";
+        delBtn.textContent = "x";
+        card.appendChild(delBtn);
+        delBtn.addEventListener('click', function () {
+            handleDeleteCard(index);
+        })
+    });
+}
+
+function handleDeleteCard (index) {
+    data.splice(index, 1);
+    render();
+}
+
+function handleAddCard (){
+    data.push({
+        title: `Заголовок ${counter}`,
+        text: `Текст для карточки номер ${counter}, которая содержит текст`,
+        date: '12.09.2018'
+    });
+    counter++;
+    render();
+}
+render();

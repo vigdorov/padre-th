@@ -51,3 +51,11 @@ h3{
     right: 10px;
     color: gray;
 }
+.addCard {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    font-size: 40px;
+    left: 50px;
+}
