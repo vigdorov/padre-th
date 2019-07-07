@@ -81,4 +81,5 @@ function handleAddCard (){
     counter++;
     render();
 }
+
 render();

@@ -12,9 +12,22 @@
 <body>
 <h1>Задание №1</h1>
 <h2>Карточки</h2>
-<button class="addCard" onclick="handleAddCard()">+</button>
+<a id="btn-add" class="addCard" href="#add-card" >+</a>
 <div class="container" id="container"></div>
+<div id="add-card" class="modal">
 
+    <div class = "modal-card">
+        <form action="" class="create-card">
+            <label for="addNewCard" >Добавление карточки</label>
+            <input type="text" class="title-card" placeholder="Карточка">
+            <input type="text" class="title-card" placeholder="Содержание карточки">
+            <input type="date" class="title-card" placeholder="Дата">
+            <button type="submit" class="addCard" onclick="handleAddCard()">+</button>
+            <a href="" class="close">Нажми меня</a>
+        </form>
+    </div>
+</div>
 <script src="script.js"></script>
+<script src="task.js"></script>
 </body>
 </html>

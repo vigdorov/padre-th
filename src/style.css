@@ -59,3 +59,28 @@ h3{
     font-size: 40px;
     left: 50px;
 }
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+}
+.modal-card {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    margin: 30% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px 3px lightgray;
+    background: #fff;
+}
+.modal:target {
+    display: flex;
+}
