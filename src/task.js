@@ -95,6 +95,7 @@ car1.salon.salonColor ='черный';
 car1.salon.material ='тряпка';
 console.log(car1);
 
+
 for (let key in car1){
     console.log(key, car1[key]);
 }
