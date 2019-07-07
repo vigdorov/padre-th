@@ -37,10 +37,16 @@ let modalCard = document.getElementById("addCard");
 let closeModal = document.getElementsByClassName("close-box")[0];
 openModalBtn.onclick = function () {
     modalCard.style.display = "flex";
+    cardMode = "add";
 };
 closeModal.onclick = function () {
     modalCard.style.display = "none";
 };
+let inputTitle = document.getElementById("inputTitle");
+let inputText = document.getElementById("inputText");
+let inputDate = document.getElementById("inputDate");
+let cardMode = "";
+let editIndex;
 
 
 function render() {
@@ -74,7 +80,24 @@ function render() {
         delBtn.addEventListener('click', function () {
             handleDeleteCard(index);
         })
+
+    let editBtn = document.createElement('button');
+    editBtn.className = "edit";
+    editBtn.textContent = "+";
+    card.appendChild(editBtn);
+    editBtn.addEventListener('click', function () {
+        handleCardEdit(index);
+    })
     });
+}
+
+function handleCardEdit(index) {
+    modalCard.style.display = "flex";
+    inputTitle.value = data[index].title;
+    inputText.value = data[index].text;
+    inputDate.value = data[index].date;
+    cardMode = "edit";
+    editIndex = index;
 }
 
 function handleDeleteCard (index) {
@@ -83,13 +106,27 @@ function handleDeleteCard (index) {
 }
 
 function handleAddCard (){
-    data.push({
-        title: `Заголовок ${counter}`,
-        text: `Текст для карточки номер ${counter}, которая содержит текст`,
-        date: '12.09.2018'
-    });
-    counter++;
+    if (cardMode === "add") {
+        data.push({
+            title: inputTitle.value,
+            text: inputText.value,
+            date: inputDate.value
+        });
+    }else {
+        data[editIndex] = {
+            title: inputTitle.value,
+            text: inputText.value,
+            date: inputDate.value
+        }
+    }
+    inputTitle.value = "";
+    inputText.value = "";
+    inputDate.value = "";
+    function hide() {
+        modalCard.style.display = "none";
+    }
     render();
+    hide();
 }
 
 render();

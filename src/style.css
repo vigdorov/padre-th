@@ -129,3 +129,15 @@ input {
 input:hover{
     box-shadow: 0 3px 5px 3px lightgray;
 }
+
+.edit {
+    position: absolute;
+    right: 60px;
+    top: -10px;
+    width:30px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+    padding: 0;
+}
