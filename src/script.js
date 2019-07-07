@@ -32,6 +32,16 @@ const data = [
 ];
 
 let counter = 7;
+let openModalBtn = document.getElementById("btnAdd");
+let modalCard = document.getElementById("addCard");
+let closeModal = document.getElementsByClassName("close-box")[0];
+openModalBtn.onclick = function () {
+    modalCard.style.display = "flex";
+};
+closeModal.onclick = function () {
+    modalCard.style.display = "none";
+};
+
 
 function render() {
 
