@@ -84,3 +84,6 @@ h3{
 .modal:target {
     display: flex;
 }
+#btn-add {
+    text-decoration: none;
+}

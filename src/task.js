@@ -85,10 +85,14 @@ console.log(car1.getFullDiscrip());
 car1.date = '1999 год';
 console.log(car1);
 
-car1.salon ={
-  salonColor: 'черный',
-  material: 'тряпка'
-};
+//car1.salon ={
+ // salonColor: 'черный',
+//  material: 'тряпка'
+//};
+
+car1.salon = {};
+car1.salon.salonColor ='черный';
+car1.salon.material ='тряпка';
 console.log(car1);
 
 for (let key in car1){
