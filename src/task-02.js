@@ -30,9 +30,25 @@ find();
 
 console.log(newArrayData);
 
+function find__1 (array) {
+  const newArray = [];
+
+  array.forEach( number => {
+    if (number % 2 === 0) {
+      newArray.push(number);
+    }
+  });
+
+  return newArray;
+}
+
+console.log('find__1:', find__1(arrayData) );
+
 
 
 //2. Написать функцию, которая возвращает новый массив, где каждое число массива умножено на собственный индекс.
+
+// TODO: переписать функцию на чистую, и чтобы использовала map
 let newArrayData2 = [];
 function find2() {
     arrayData.forEach(function (item, index) {
@@ -45,6 +61,7 @@ console.log(newArrayData2);
 
 
 // 3. Написать функцию, которая возвращает массив развертнутый наоборот.
+// TODO: переписать на свой алгоритм
 let newArrayData3 = [];
 function find3() {
         newArrayData3 = arrayData.reverse();
@@ -54,6 +71,7 @@ console.log(newArrayData3);
 
 
 // 4. Написать функцию, которая возвращает массив с строковыми названиями месяцев по соответствию с цифрами.
+// TODO: перенписать на чистую функцию
 let newArrayData4 = [];
 function find4() {
     arrayData.forEach(function (item) {
@@ -70,6 +88,7 @@ console.log(newArrayData4);
 
 
 // 5. Написать функцию, которая возвращает самое большое число из массива.
+// TODO: переписать на чистую функцию
 let maxNum = Math.max(...arrayData);
 console.log(maxNum);
 
@@ -141,6 +160,46 @@ let lamba = new CarConstructor("lamborgini", "красный","2019", "желт�
 console.log(lamba);
 console.log(lamba.fullProbeg());
 
+function CreateCar ({
+                      name = 'lada',
+                      color = 'silver',
+                      year = '1956',
+                      salonColor = 'black',
+                      salonMaterial = 'тряпка' }) {
+
+  this.name = name;
+  this.color = color;
+  this.year = year;
+  this.salon = {
+    color: salonColor,
+    material: salonMaterial
+  };
+
+  this._distance = 0;
+
+  this.goForward = km => {
+    this._distance += km;
+  };
+
+  this.getDistance = () => {
+    return `Автомобиль ${this.name} (${this.year}) прошел ${this._distance} км`;
+  };
+}
+
+const opel = new CreateCar({
+  name: 'opel',
+  color: 'brown',
+  year: '1999',
+  salonColor: 'red',
+  salonMaterial: 'wood'
+});
+
+opel.goForward(75);
+opel.goForward(25);
+opel.goForward(745);
+
+console.log( opel.getDistance() );
+
 // Задания на условные операторы (оформить в виде функций, которые принимают значения).
 
 // Даны два числа, вывести их сумму. пример:
@@ -165,11 +224,37 @@ function ifSum(x, y) {
 // 2. Даны три целых числа. Найти количество положительных чисел
 //    в исходном наборе.
   let arr = [6, -3, 5];
-  let count = [].filter.call(arr, function (el) {
+  let count = arr.filter( function (el) {
       return el > 0;
   }).length;
   console.log(count);
 
+  function task__02_p (array) {
+    let count = 0;
+
+    array.forEach( number => {
+      if (number > 0) {
+        count++;
+      }
+    });
+
+    return count;
+  }
+
+  function task__02 (a, b, c) {
+    let count = 0;
+    if (a > 0) {
+      count++;
+    }
+    if (b > 0) {
+      count++;
+    }
+    if (c > 0){
+      count++;
+    }
+    return count;
+  }
+console.log("редактировано:", task__02(15, -6, 49));
 // 3. Даны два числа. Вывести большее из них, а потом меньшее.
 function name3(x, y) {
     if (x >= y) {
@@ -185,3 +270,34 @@ function mathMin(x, y, z) {
   return a
 }
 console.log(mathMin(43, 15, 98));
+
+
+function nim (a, b, c) {
+  let min = a;
+  if (min > b) {
+    min = b;
+  }
+  if (min > c){
+    min = c;
+  }
+  return min;
+}
+console.log(nim(14, 12, 46));
+
+
+// Задание на объекты
+
+/*
+
+Написать конструктор для стиральной машинки.
+
+При создании имеются такие свойства: модель, марка, год, цвет.
+
+Скрытые свойства: уровень воды в баке (5000 ml или 0 ml)
+
+Методы: налить воду (наполняет бак и пишет об этом в консоль)
+Методы: постирать вещи (выводит сообщение что постирал и опустошает бак)
+
+Написать на классах
+
+ */
