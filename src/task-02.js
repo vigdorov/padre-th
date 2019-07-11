@@ -49,50 +49,56 @@ console.log('find__1:', find__1(arrayData) );
 //2. Написать функцию, которая возвращает новый массив, где каждое число массива умножено на собственный индекс.
 
 // TODO: переписать функцию на чистую, и чтобы использовала map
-let newArrayData2 = [];
-function find2() {
-    arrayData.forEach(function (item, index) {
-      let i = item * index;
-            newArrayData2.push (i);
+
+function find2(array) {
+    let newArrayData2 = array.map(function (item, index) {
+      return item * index;
+
     });
+ return newArrayData2;
 }
-find2();
-console.log(newArrayData2);
+console.log("Редактировано сейчас", find2(arrayData));
 
 
 // 3. Написать функцию, которая возвращает массив развертнутый наоборот.
 // TODO: переписать на свой алгоритм
-let newArrayData3 = [];
-function find3() {
-        newArrayData3 = arrayData.reverse();
-}
-find3();
-console.log(newArrayData3);
+
+function find3(array) {
+    let newArrayData3 =[];
+    let i;
+    let n = array.length;
+    for (i = 0; i < n; i++){
+        newArrayData3[i]=array[n -1 - i];
+    }
+    return newArrayData3;
+    }
+
+console.log("Редактировано сейчас", find3(arrayData));
 
 
 // 4. Написать функцию, которая возвращает массив с строковыми названиями месяцев по соответствию с цифрами.
 // TODO: перенписать на чистую функцию
-let newArrayData4 = [];
-function find4() {
-    arrayData.forEach(function (item) {
+function find4(array) {
+    let newArrayData4 =[];
+    array.forEach(function (item) {
             let date = new Date (1999, item - 1, 12) ;
             let options = {
                 month: 'long'
             };
-        newArrayData4.push (date.toLocaleString("ru", options));
-
+        newArrayData4.push(date.toLocaleString("ru", options));
     });
+    return newArrayData4;
 }
-find4();
-console.log(newArrayData4);
+console.log(find4(arrayData));
 
 
 // 5. Написать функцию, которая возвращает самое большое число из массива.
 // TODO: переписать на чистую функцию
-let maxNum = Math.max(...arrayData);
-console.log(maxNum);
-
-
+function max (array) {
+    let maxNum = Math.max(...array);
+    return maxNum;
+    }
+console.log(max(arrayData));
 // Задания на объекты.
 
 /*
@@ -301,3 +307,38 @@ console.log(nim(14, 12, 46));
 Написать на классах
 
  */
+class Machine {
+    constructor(model= 'X500', brand= "Bosh", year= "2017", color= "white"
+)
+{
+    this.model = model;
+    this.brand = brand;
+    this.year = year;
+    this.color = color;
+
+    this._wineContainer = 0;
+
+    this.waterVolume = (ml) => {
+        this._wineContainer = ml;
+        if (this._wineContainer >= 3000){
+           return "Бак с водой полон!";
+        } else {
+            return "Бак с водой пуст!";
+        }
+    };
+
+    this.getStart = () => {
+        if (this._wineContainer >= 3000) {
+            return `Стиральная машинка ${this.brand} (${this.model}) начала стирку с  ${this._wineContainer} ml воды`;
+        }else {
+            return `Стиральная машинка ${this.brand} (${this.model}) не может начать стирку если бак с водой пуст!`
+        }
+
+    }
+};
+}
+let zanussi = new Machine("Zanussi", "D200", "2019", "blue");
+console.log(zanussi);
+console.log(zanussi.waterVolume(5000));
+console.log(zanussi.getStart());
+console.log(zanussi.getStart());
