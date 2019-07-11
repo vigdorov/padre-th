@@ -71,9 +71,22 @@ function find3(array) {
         newArrayData3[i]=array[n -1 - i];
     }
     return newArrayData3;
-    }
+}
+
+function find__3 (array) {
+  const newArray = [];
+
+  const lastIndex = array.length - 1;
+
+  for (let i = lastIndex; i >= 0; i--) {
+    newArray.push(array[i]);
+  }
+
+  return newArray;
+}
 
 console.log("Редактировано сейчас", find3(arrayData));
+console.log("Редактировано сейчас 2", find__3(arrayData));
 
 
 // 4. Написать функцию, которая возвращает массив с строковыми названиями месяцев по соответствию с цифрами.
@@ -97,7 +110,7 @@ console.log(find4(arrayData));
 function max (array) {
     let maxNum = Math.max(...array);
     return maxNum;
-    }
+}
 console.log(max(arrayData));
 // Задания на объекты.
 
@@ -318,27 +331,48 @@ class Machine {
 
     this._wineContainer = 0;
 
+    this._logs = [];
+
+    this._addMessage = text => {
+      const display = document.getElementById('display');
+
+      this._logs.unshift(text);
+      display.value = this._logs.join('\n');
+    };
+
+    this._clearLogs = () => {
+      this._logs = [];
+    };
+
     this.waterVolume = (ml) => {
         this._wineContainer = ml;
         if (this._wineContainer >= 3000){
-           return "Бак с водой полон!";
+          this._addMessage('Начался набор воды...');
+
+          for (let percent = 0, timer = 1000; percent <= 100; percent += 25, timer += 1000) {
+            setTimeout( () => {
+              if (percent === 100) {
+                this._addMessage(`Бак наполнен!`);
+              } else {
+                this._addMessage(`Бак заполнен на ${percent}%...`);
+              }
+            }, timer);
+          }
         } else {
-            return "Бак с водой пуст!";
+          this._addMessage('Бак с водой пуст!');
         }
     };
 
     this.getStart = () => {
         if (this._wineContainer >= 3000) {
-            return `Стиральная машинка ${this.brand} (${this.model}) начала стирку с  ${this._wineContainer} ml воды`;
-        }else {
-            return `Стиральная машинка ${this.brand} (${this.model}) не может начать стирку если бак с водой пуст!`
+          this._addMessage(`Стиральная машинка ${this.brand} (${this.model}) начала стирку с  ${this._wineContainer} ml воды`);
+          this.waterVolume(0);
+        } else {
+          this._addMessage(`Стиральная машинка ${this.brand} (${this.model}) не может начать стирку если бак с водой пуст!`);
         }
 
     }
 };
 }
 let zanussi = new Machine("Zanussi", "D200", "2019", "blue");
-console.log(zanussi);
-console.log(zanussi.waterVolume(5000));
-console.log(zanussi.getStart());
-console.log(zanussi.getStart());
+
