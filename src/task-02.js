@@ -344,6 +344,8 @@ class Machine {
       this._logs = [];
     };
 
+    this.getLogs = () => [ ...this._logs ];
+
     this.waterVolume = (ml) => {
         this._wineContainer = ml;
         if (this._wineContainer >= 3000){
