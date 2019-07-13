@@ -337,7 +337,7 @@ class Machine {
       const display = document.getElementById('display');
 
       this._logs.unshift(text);
-      display.value = this._logs.join('\n');
+      display.innerHTML = `${this._logs} </br>`;
     };
 
     this._clearLogs = () => {
@@ -355,6 +355,7 @@ class Machine {
                 this._addMessage(`Бак наполнен!`);
               } else {
                 this._addMessage(`Бак заполнен на ${percent}%...`);
+                  return this._wineContainer >= 5000;
               }
             }, timer);
           }
@@ -372,7 +373,14 @@ class Machine {
         }
 
     }
+
 };
+
 }
 let zanussi = new Machine("Zanussi", "D200", "2019", "blue");
 
+let model = document.getElementById("model");
+model.innerHTML =`${zanussi.model}`;
+
+let brand = document.getElementById("brand");
+brand.innerHTML =`${zanussi.brand}`;
