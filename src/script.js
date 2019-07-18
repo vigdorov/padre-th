@@ -30,13 +30,19 @@ const data = [
     date: '12.09.2018'
   },
 ];
-
+let modalTitle = document.getElementById ("modal_title");
+let btnAddCard = document.getElementById("add-card");
 let counter = 7;
 let openModalBtn = document.getElementById("btnAdd");
 let modalCard = document.getElementById("addCard");
 let closeModal = document.getElementsByClassName("close-box")[0];
 openModalBtn.onclick = function () {
     modalCard.style.display = "flex";
+    inputTitle.value = "";
+    inputText.value = "";
+    inputDate.value = "";
+    modalTitle.textContent = "Добавить карточку";
+    btnAddCard.textContent = "Добавить";
     cardMode = "add";
 };
 closeModal.onclick = function () {
@@ -47,6 +53,7 @@ let inputText = document.getElementById("inputText");
 let inputDate = document.getElementById("inputDate");
 let cardMode = "";
 let editIndex;
+
 
 
 function render() {
@@ -96,6 +103,8 @@ function handleCardEdit(index) {
     inputTitle.value = data[index].title;
     inputText.value = data[index].text;
     inputDate.value = data[index].date;
+    modalTitle.textContent = "Редактировать карточку";
+    btnAddCard.textContent = "Редактировать";
     cardMode = "edit";
     editIndex = index;
 }
@@ -119,9 +128,6 @@ function handleAddCard (){
             date: inputDate.value
         }
     }
-    inputTitle.value = "";
-    inputText.value = "";
-    inputDate.value = "";
     function hide() {
         modalCard.style.display = "none";
     }
