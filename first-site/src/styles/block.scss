@@ -1,0 +1,27 @@
+@import './color';
+
+.block {
+  padding: 100px;
+
+  &-secondary {
+    background-color: $color-secondary;
+  }
+
+  &-light-secondary {
+    background-color: $color-light-secondary;
+  }
+
+  &-light {
+    background-color: $color-light;
+  }
+
+  &-active {
+    background-color: $color-active;
+    color: $color-light;
+  }
+
+  &-dark {
+    background-color: $color-dark;
+    color: $color-light-secondary;
+  }
+}
