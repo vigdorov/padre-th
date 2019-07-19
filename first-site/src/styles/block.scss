@@ -2,6 +2,9 @@
 
 .block {
   padding: 100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
   &-secondary {
     background-color: $color-secondary;
@@ -24,4 +27,92 @@
     background-color: $color-dark;
     color: $color-light-secondary;
   }
+}
+.header {
+  background-color: $color-secondary;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 100px;
+}
+.menu-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+.link {
+  list-style-type: none;
+  margin: 0 10px;
+  padding: 0;
+  font-weight: bold;
+  text-decoration: none;
+}
+.end-block {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.left-block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.block-content {
+  width: 500px;
+}
+.mid-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  align-items: center;
+}
+#bg {
+  background: linear-gradient(to right, $color-light 50%, $color-secondary 50%);
+}
+.percent-75 {
+  max-width: 600px;
+  height:3px;
+  background: linear-gradient(to right, $color-active 75%, $color-secondary 25%);
+  margin-bottom: 30px;
+}
+.percent-90 {
+  max-width: 600px;
+  height:3px;
+  background: linear-gradient(to right, $color-active 90%, $color-secondary 10%);
+  margin-bottom: 30px;
+}
+.percent-65 {
+  max-width: 600px;
+  height:3px;
+  background: linear-gradient(to right, $color-active 65%, $color-secondary 35%);
+  margin-bottom: 30px;
+}
+.line-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.work-result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.img-box {
+  width: 50px;
+  height: 50px;
+  border: 1px solid $color-light;
+  margin-right: 20px;
+}
+.box {
+  width: 100%;
 }
