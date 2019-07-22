@@ -14,11 +14,13 @@ html, body, #root {
 
 input, textarea, select, button {
   font-family: 'Montserrat', sans-serif;
+  outline: none;
 }
 
 .container {
 
 }
+
 a {
   text-decoration: none;
   color: $color-primary;
@@ -59,4 +61,16 @@ a:hover {
 .large-text {
   font-size: 20px;
   font-weight: bold;
+}
+
+.btn {
+  // основные параметры для всех кнопок
+
+  &-primary {
+    // цветовые отличия
+  }
+
+  &-secondary {
+    // цветовые отличия
+  }
 }

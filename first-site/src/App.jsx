@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
+import Block from './components/block';
+
 import './styles/index.scss';
+import { Gallery } from "./components/gallery";
+import { gallery } from "./assets/data/gallery";
+import Button from "./components/button";
 
 class App extends Component {
   render () {
@@ -20,17 +25,17 @@ class App extends Component {
             </ul></div>
         </div>
 
-        <div className="block block-secondary">
+
+
+        <Block template="secondary">
           <div className="end-block">
               <div className="block-content">
                   <h1 className="title-main">We Design and Develop</h1>
                   <p className="mid-text">We are a new design studio based in USA. We have over <br/> years of combined experience, and know a thing or two <br/> about designing websites and mobile apps.</p>
                   <button className="btn-main">CONTACT US</button>
               </div>
-
           </div>
-
-        </div>
+        </Block>
 
         <div className="block block-light">
             <div className="mid-content">
@@ -40,6 +45,7 @@ class App extends Component {
                 <div>Картинка роспись</div>
             </div>
         </div>
+          <Button name='жми меня'/>
 
         <div id="bg" className="block block-light-secondary">
             <div className="left-block">
@@ -88,19 +94,8 @@ class App extends Component {
             </div>
         </div>
 
-        <div id="gallery">
-          <div className="img-container1"></div>
-            <div className="img-container2"></div>
-            <div className="img-container1"></div>
-            <div className="img-container2"></div>
-            <div className="img-container2"></div>
-            <div className="img-container1"></div>
-            <div className="img-container2"></div>
-            <div className="img-container1"></div>
-        </div>
-          <button id="gal-btn" className="btn-gallery" >
-              LOAD MORE WORK
-          </button>
+
+        <Gallery images={gallery} />
 
         <div className="block block-light">
           <div className="mid-content">
@@ -270,3 +265,10 @@ class App extends Component {
 }
 
 export default App;
+
+/**
+ * Написать компоненты
+ * HeaderBlock - заголовоки для блоков
+ * TextBlock - текст для блоков (атрибут выравнивания текста)
+ * PercentStrip - блок с процентами (атрибуты: текст и проценты)
+ */
