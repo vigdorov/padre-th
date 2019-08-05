@@ -1,9 +1,17 @@
 import React, {Component} from 'react';
 
+const content = [
+  { quote: '', author: ''},
+];
+
 
 class Carousel extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+          currentPage: 0,
+          totalPages: content.length,
+        };
 
 
 
@@ -19,17 +27,20 @@ class Carousel extends Component {
             'И это я сказал'
         ];
 
-        this.btns = [];
+
        this.items = 0;
     }
+
+    // todo: переписать метод чтобы менял стейт setState
             handleChangeContent (index) {
                 this.items = index;
 
 }
     render() {
+      const btns = [];
 
             this.corouselArrow.forEach((text, index) => {
-                this.btns.push(
+                btns.push(
                     <button
                         className='slider-btn'
                         type='button'
@@ -42,14 +53,16 @@ class Carousel extends Component {
 
             });
 
+            const { currentPage: i } = this.state;
+
             return (
                 <div className="mid-content">
                     <h3 id="cite" className="slider-text">
-                        {this.corouselArrow[this.items]}
+                        {content[i].quote}
                     </h3>
                     <p id="autor" className="capslock">{this.corouselAutorArrow[this.items]}</p>
                     <div className="slider">
-                        {this.btns}
+                        {btns}
                     </div>
                 </div>
             );
