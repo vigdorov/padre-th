@@ -6,13 +6,21 @@ import './styles/index.scss';
 import { Gallery } from "./components/gallery";
 import { gallery } from "./assets/data/gallery";
 import Button from "./components/button";
+import Logo from "./components/logo";
+import Signature from "./assets/svg/signature.svg";
+import NumberImg from "./components/numbers";
+import WorkWay from "./components/workway";
+import Carousel from "./components/carousel";
+import {ComponyImg} from "./components/compony";
+import Modal from "./components/modal";
+
 
 class App extends Component {
   render () {
     return (
       <div className="container">
         <div className="header">
-          <div className="logo">Logo</div>
+            <Logo />
             <div className="menu">
                 <ul className="menu-nav">
                 <li className="link"><a href="#" className="menu-item">home</a></li>
@@ -26,7 +34,6 @@ class App extends Component {
         </div>
 
 
-
         <Block template="secondary">
           <div className="end-block">
               <div className="block-content">
@@ -37,15 +44,16 @@ class App extends Component {
           </div>
         </Block>
 
-        <div className="block block-light">
+          <Block template="block-light">
             <div className="mid-content">
                 <h2>About Us</h2>
                 <p className="center-text">Divide have don't man wherein air fourth. Own itself make have night won't make. A you under Seed appear which good give. Own give air without fowl moveth dry first heaven fruit, dominion she'd won't very all.
                 </p>
-                <div>Картинка роспись</div>
+                <div>
+                    <img src={Signature} alt=""/>
+                </div>
             </div>
-        </div>
-          <Button name='жми меня'/>
+          </Block>
 
         <div id="bg" className="block block-light-secondary">
             <div className="left-block">
@@ -63,28 +71,36 @@ class App extends Component {
             <div className="box">
             <div className="line-box">
                 <div className="work-result">
-                    <div className="img-box"> </div>
+                    <div className="img-box">
+                        <NumberImg name="portfolio"/>
+                    </div>
                     <div className="img-description">
                         <p className="number">548</p>
                         <p className="capslock">PROJECTS COMPLETED</p>
                     </div>
                 </div>
                 <div className="work-result">
-                    <div className="img-box"> </div>
+                    <div className="img-box">
+                        <NumberImg name="clock"/>
+                    </div>
                     <div className="img-description">
                         <p className="number">1465</p>
                         <p className="capslock">WORKING HOURS</p>
                     </div>
                 </div>
                 <div className="work-result">
-                    <div className="img-box"> </div>
+                    <div className="img-box">
+                        <NumberImg name="like"/>
+                    </div>
                     <div className="img-description">
                         <p className="number">612</p>
                         <p className="capslock">POSITIVE FEEDBACKS</p>
                     </div>
                 </div>
                 <div className="work-result">
-                    <div className="img-box"> </div>
+                    <div className="img-box">
+                        <NumberImg name="star"/>
+                    </div>
                     <div className="img-description">
                         <p className="number">735</p>
                         <p className="capslock">HAPPY CLIENTS</p>
@@ -113,49 +129,65 @@ class App extends Component {
         <div className="block block-light-secondary">
           <div className="line-box">
               <div className="work-options">
-              <div className="img-box black-border"> </div>
+              <div className="img-box black-border">
+                  <WorkWay name='star'/>
+              </div>
               <p className="capslock">UI/UX DESIGN</p>
               <p className="center-text mini">Be set fourth land god darkness make it wherein own</p>
           </div>
 
               <div className="work-options">
-                  <div className="img-box black-border"> </div>
+                  <div className="img-box black-border">
+                      <WorkWay name='diamond'/>
+                  </div>
                   <p className="capslock">WEB DEVELOPMENT</p>
                   <p className="center-text mini">A she'd them bring void moving  third she'd kind fill</p>
               </div>
 
               <div className="work-options">
-                  <div className="img-box black-border"> </div>
+                  <div className="img-box black-border">
+                      <WorkWay name='phone'/>
+                  </div>
                   <p className="capslock">APP / MOBILE</p>
                   <p className="center-text mini">Dominion man second spirit he, earth they're creeping</p>
               </div>
 
               <div className="work-options">
-                  <div className="img-box black-border"> </div>
+                  <div className="img-box black-border">
+                      <WorkWay name='plane'/>
+                  </div>
                   <p className="capslock">GAME DESIGN</p>
                   <p className="center-text mini">Morning his saying moveth it  multiply appear life be</p>
               </div>
 
               <div className="work-options">
-                  <div className="img-box black-border"> </div>
+                  <div className="img-box black-border">
+                      <WorkWay name="magicWand"/>
+                  </div>
                   <p className="capslock">SEO / MARKETING</p>
                   <p className="center-text mini">Give won't after land fill creeping  meat you, may</p>
               </div>
 
               <div className="work-options">
-                  <div className="img-box black-border"> </div>
+                  <div className="img-box black-border">
+                      <WorkWay name='paintBucket'/>
+                  </div>
                   <p className="capslock">PHOTOGRAPHY</p>
                   <p className="center-text mini">Creepeth one seas cattle grass  give moving saw give</p>
               </div>
 
               <div className="work-options">
-                  <div className="img-box black-border"> </div>
+                  <div className="img-box black-border">
+                      <WorkWay name='joy'/>
+                  </div>
                   <p className="capslock">GRAPHIC DESIGN</p>
                   <p className="center-text mini">Open, great whales air rule for,  fourth life whales</p>
               </div>
 
               <div className="work-options">
-                  <div className="img-box black-border"> </div>
+                  <div className="img-box black-border">
+                      <WorkWay name='arc'/>
+                  </div>
                   <p className="capslock">ILLUSTRATIONS</p>
                   <p className="center-text mini">Whales likeness hath, man kind  for them air two won't</p>
               </div>
@@ -164,33 +196,31 @@ class App extends Component {
         </div>
 
         <div className="block block-active">
-            <div className="mid-content">
-                <h3 className="slider-text">
-                    “ Outstanding job and exceeded all expectations. It was a pleasure to work with them on a sizable first project and am looking forward to start the next one asap.”
-                </h3>
-                <p className="capslock">MICHEL HOPKINS</p>
-                <div className="slider">
-                  <div className="slider-btn"> </div>
-                  <div className="slider-btn active"> </div>
-                  <div className="slider-btn"> </div>
-                </div>
+            <Carousel />
 
-            </div>
         </div>
 
         <div className="block block-light">
           <div className="line-box">
               <div className="work-options">
-                  <div className="img-box black-border"></div>
+                  <div className="company">
+                      <ComponyImg name='company1'/>
+                  </div>
               </div>
               <div className="work-options">
-                  <div className="img-box black-border"></div>
+                  <div className="company">
+                      <ComponyImg name='company2'/>
+                  </div>
               </div>
               <div className="work-options">
-                  <div className="img-box black-border"></div>
+                  <div className="company">
+                      <ComponyImg name='company3'/>
+                  </div>
               </div>
               <div className="work-options">
-                  <div className="img-box black-border"></div>
+                  <div className="company">
+                      <ComponyImg name='company4'/>
+                  </div>
               </div>
 
 
@@ -210,7 +240,12 @@ class App extends Component {
                   <textarea className="textarea-message"  name="You Comment" id="comment" cols="30" rows="7" value="You Comment"></textarea>
 
               </form>
-              <button className="btn-main">SEND MESSAGE</button>
+              <button
+                  className="btn-main"
+
+              >
+                  SEND MESSAGE
+              </button>
 
           </div>
         </div>
