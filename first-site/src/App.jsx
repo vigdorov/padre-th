@@ -14,6 +14,7 @@ import Carousel from "./components/carousel";
 import {ComponyImg} from "./components/compony";
 import Modal from "./components/modals/modal";
 import ModalSendMsg from "./components/modals/modal-send-msg";
+import Counter from "./components/counter";
 
 
 class App extends Component {
@@ -66,6 +67,8 @@ class App extends Component {
                     <li className="link"><a href="#" className="menu-item">contact</a></li>
                 </ul></div>
             </div>
+
+              <Counter/>
 
 
             <Block template="secondary">
