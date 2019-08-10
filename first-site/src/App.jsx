@@ -14,7 +14,11 @@ import Carousel from "./components/carousel";
 import {ComponyImg} from "./components/compony";
 import Modal from "./components/modals/modal";
 import ModalSendMsg from "./components/modals/modal-send-msg";
-import Counter from "./components/counter";
+import {Form} from "./components/form";
+import Menu from "./components/mainMenu"
+import {Percent} from "./components/percentLine";
+
+
 
 
 class App extends Component {
@@ -23,25 +27,28 @@ class App extends Component {
 
         this.state = {
             modal: false,
+            icon: false,
             form: {
-                name: '',
-                email: '',
-                title: '',
-                comment: '',
+                name: 'Your name',
+                email: 'Your Email',
+                title: 'Enter title',
+                comment: 'Enter comment'
             }
         };
-    }
+        this.handleChangeInput = event => {
+            const {id, value} = event.target;
 
-    handleChangeInput = event => {
-        const { id, value } = event.target;
+            this.setState({
+                form: {
+                    ...this.state.form,
+                    [id]: value
+                }
+            })
 
-        this.setState({
-            form: {
-                ...this.state.form,
-                [id]: value
-            }
-        })
-    };
+        }
+        };
+
+
 
     handleShow = () => {
         this.setState({ modal: true });
@@ -54,24 +61,15 @@ class App extends Component {
     render () {
         return (
           <div className="container">
+              <a name="home"/>
             <div className="header">
+
                 <Logo />
-                <div className="menu">
-                    <ul className="menu-nav">
-                    <li className="link"><a href="#" className="menu-item">home</a></li>
-                    <li className="link"><a href="#" className="menu-item">about</a></li>
-                    <li className="link"><a href="#" className="menu-item">work</a></li>
-                    <li className="link"><a href="#" className="menu-item">process</a></li>
-                    <li className="link"><a href="#" className="menu-item">services</a></li>
-                    <li className="link"><a href="#" className="menu-item">testimonials</a></li>
-                    <li className="link"><a href="#" className="menu-item">contact</a></li>
-                </ul></div>
+
+                <Menu />
             </div>
 
-              <Counter/>
-
-
-            <Block template="secondary">
+              <Block template="secondary">
               <div className="end-block">
                   <div className="block-content">
                       <h1 className="title-main">We Design and Develop</h1>
@@ -82,6 +80,7 @@ class App extends Component {
             </Block>
 
               <Block template="block-light">
+                  <a name="about"/>
                 <div className="mid-content">
                     <h2>About Us</h2>
                     <p className="center-text">Divide have don't man wherein air fourth. Own itself make have night won't make. A you under Seed appear which good give. Own give air without fowl moveth dry first heaven fruit, dominion she'd won't very all.
@@ -92,19 +91,12 @@ class App extends Component {
                 </div>
               </Block>
 
-            <div id="bg" className="block block-light-secondary">
-                <div className="left-block">
-                    <h2>Professional Skills</h2>
-                    <p className="capslock" >UI/UX DESIGN 75%</p>
-                    <div className="percent-75"></div>
-                    <p className="capslock">WEB DEVELOPMENT 90%</p>
-                    <div className="percent-90"></div>
-                    <p className="capslock">MARKETING 65%</p>
-                    <div className="percent-65"></div>
-                </div>
-            </div>
+            <Block template="light-secondary">
+                <a name="work"/>
+                <Percent design={75} development="90" marketing="65"/>
+            </Block>
 
-            <div className="block block-active">
+            <Block template="active">
                 <div className="box">
                 <div className="line-box">
                     <div className="work-result">
@@ -145,12 +137,13 @@ class App extends Component {
                     </div>
                 </div>
                 </div>
-            </div>
+            </Block>
 
 
             <Gallery images={gallery} />
 
-            <div className="block block-light">
+            <Block template="light">
+                <a name="process"/>
               <div className="mid-content">
                 <h2>Our work Process</h2>
                 <p className="center-text">
@@ -160,10 +153,11 @@ class App extends Component {
                 <div className="video-container">
                     тут может быть ваше видео
                 </div>
-            </div>
+            </Block>
 
 
-            <div className="block block-light-secondary">
+            <Block template="light-secondary">
+                <a name="services"/>
               <div className="line-box">
                   <div className="work-options">
                   <div className="img-box black-border">
@@ -230,14 +224,15 @@ class App extends Component {
                   </div>
 
               </div>
-            </div>
+            </Block>
 
-            <div className="block block-active">
+            <Block template="active">
                 <Carousel />
 
-            </div>
+            </Block>
 
-            <div className="block block-light">
+            <Block template="block-light">
+                <a name="testimonials"/>
               <div className="line-box">
                   <div className="work-options">
                       <div className="company">
@@ -262,32 +257,34 @@ class App extends Component {
 
 
               </div>
-            </div>
+            </Block>
 
-            <div className="block block-light-secondary">
+            <Block template="light-secondary">
+                <a name="contact"/>
               <div className="mid-content">
                   <h2>Need a Project?</h2>
                   <p className="center-text">
                       Let us know what you're looking for in an agency. We'll take a look and see if this could be the start of something beautiful.
                   </p>
-                  <form action="" className="message">
-                      <input className="input-message" type="text" id="name" value={this.state.form.name} onChange={this.handleChangeInput}/>
-                      <input className="input-message" type="text" id="email" value="Yor Email"/>
-                      <input className="input-message large" type="text" id="title" value="Yor Title"/>
-                      <textarea className="textarea-message"  name="You Comment" id="comment" cols="30" rows="7" value="You Comment"></textarea>
+                  <Form name={this.state.form.name}
+                        email={this.state.form.email}
+                        title={this.state.form.title}
+                        comment={this.state.form.comment}
+                        change={this.handleChangeInput}
+                  />
 
-                  </form>
                   <button
                       className="btn-main"
+                      type="button"
                       onClick={this.handleShow}
                   >
                       SEND MESSAGE
                   </button>
 
               </div>
-            </div>
+            </Block>
 
-       <div className="block block-dark">
+       <Block template="dark">
                <div className="footer">
                    <div className="copyright">
                        <p className="large-text">Piroll Design, Inc.</p>
@@ -335,7 +332,7 @@ class App extends Component {
              onClose={this.handleHide}
              form={this.state.form}/>
 
-        </div>
+        </Block>
           </div>
         );
       }

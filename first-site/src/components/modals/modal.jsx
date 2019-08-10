@@ -16,7 +16,7 @@ const Modal = props => {
 
   return (
     <div
-      className="modal 3245"
+      className="modal"
       style={{ display: props.show ? 'flex' : 'none'}}
       onClick={handleClose}
     >

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import Modal from "./modal";
 
 const ModalSendMsg = props => {
-  const name = !!props.form.name ? `${props.form.name}, ваше` : 'Ваше';
+  const name = `${props.form.name}, `;
+  const titleMsg = `${props.form.title} `;
+  const commentText = `${props.form.comment} `;
   const header = (
     <h3>{name} сообщение отправлено</h3>
   );
@@ -12,6 +14,7 @@ const ModalSendMsg = props => {
     <button
       className="btn-main"
       type="button"
+      onClick = {props.onClose}
     >
       OK
     </button>
@@ -25,7 +28,7 @@ const ModalSendMsg = props => {
       onClose={props.onClose}
     >
       <p className="center-text">
-        Хочу внимания
+          {name} ваш комментарий на тему <br/> <b>{titleMsg}</b> <br/> с сообщением <br/><q>{commentText}</q> <br/> отправлен
       </p>
     </Modal>
   )
