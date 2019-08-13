@@ -7,7 +7,7 @@ import { Gallery } from "./components/gallery";
 import { gallery } from "./assets/data/gallery";
 import Button from "./components/button";
 import Logo from "./components/logo";
-import Signature from "./assets/svg/signature.svg";
+import { ReactComponent as Signature } from "./assets/svg/signature.svg";
 import NumberImg from "./components/numbers";
 import WorkWay from "./components/workway";
 import Carousel from "./components/carousel";
@@ -18,12 +18,11 @@ import {Form} from "./components/form";
 import Menu from "./components/mainMenu"
 import {Percent} from "./components/percentLine";
 
-
-
-
 class App extends Component {
     constructor (props) {
         super(props);
+
+        console.log(Signature);
 
         this.state = {
             modal: false,
@@ -85,7 +84,7 @@ class App extends Component {
                     <p className="center-text">Divide have don't man wherein air fourth. Own itself make have night won't make. A you under Seed appear which good give. Own give air without fowl moveth dry first heaven fruit, dominion she'd won't very all.
                     </p>
                     <div>
-                        <img src={Signature} alt=""/>
+                        <Signature/>
                     </div>
                 </div>
               </Block>
