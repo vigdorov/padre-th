@@ -231,7 +231,7 @@
 }
 .logo-image {
   position: fixed;
-  left: 50px;
+  left: 30px;
 }
 .iconMenu {
   display: flex;
@@ -243,4 +243,20 @@
   &__img {
     width:20px;
   };
+}
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.line {
+  max-width: 600px;
+  height: 3px;
+  background: $color-secondary;
+  margin-bottom: 30px;
+}
+.percent {
+  width: 50%;
+  height: 3px;
+  background: $color-active;
 }

@@ -9,16 +9,18 @@ class Logo extends Component {
 
 
     this.state = {
-        iconMenu: true
+        iconMenu: false
     };
+
     this.handleIconMenu = () => {
-        if (this.state.iconMenu = false) {
-
+        if (this.state.iconMenu === false) {
+            return (
                 this.setState({ iconMenu: true })
-
+            )
         } else {
-
+            return (
                 this.setState({ iconMenu: false })
+            )
 
         }
     };
@@ -28,7 +30,6 @@ class Logo extends Component {
 
      return (
          <div className="logo-image">
-             {console.log(this.state.iconMenu)}
                  <img src={LogoSVG} alt="Logo" onClick={this.handleIconMenu}/>
 
 

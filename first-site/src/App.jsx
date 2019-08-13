@@ -49,7 +49,6 @@ class App extends Component {
         };
 
 
-
     handleShow = () => {
         this.setState({ modal: true });
     };
@@ -74,7 +73,7 @@ class App extends Component {
                   <div className="block-content">
                       <h1 className="title-main">We Design and Develop</h1>
                       <p className="mid-text">We are a new design studio based in USA. We have over <br/> years of combined experience, and know a thing or two <br/> about designing websites and mobile apps.</p>
-                      <button className="btn-main">CONTACT US</button>
+                      <button className="btn-main" >CONTACT US</button>
                   </div>
               </div>
             </Block>
@@ -93,7 +92,7 @@ class App extends Component {
 
             <Block template="light-secondary">
                 <a name="work"/>
-                <Percent design={75} development="90" marketing="65"/>
+                <Percent design="75" development="90" marketing="65"/>
             </Block>
 
             <Block template="active">

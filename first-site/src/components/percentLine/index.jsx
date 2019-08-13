@@ -6,15 +6,22 @@ export const Percent = props => {
         let development = props.development;
         let marketing = props.marketing;
 
+
         return (
             <div className="left-block">
                 <h2>Professional Skills</h2>
                 <p className="capslock" >UI/UX DESIGN {design}%</p>
-                <div className="percent-75"></div>
+                <div className="line">
+                        <div className="percent" style={{width: design +'%'}}> </div>
+                </div>
                 <p className="capslock">WEB DEVELOPMENT {development}%</p>
-                <div className="percent-90"></div>
+                <div className="line">
+                    <div className="percent" style={{width: development +'%'}}></div>
+                </div>
                 <p className="capslock">MARKETING {marketing}%</p>
-                <div className="percent-65"></div>
+                <div className="line">
+                    <div className="percent" style={{width: marketing +'%'}}></div>
+                </div>
             </div>
         )
 
