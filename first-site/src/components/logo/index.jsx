@@ -12,6 +12,7 @@ class Logo extends Component {
         iconMenu: false
     };
 
+    // TODO: методы выносим из конструктора
     this.handleIconMenu = () => {
         if (this.state.iconMenu === false) {
             return (

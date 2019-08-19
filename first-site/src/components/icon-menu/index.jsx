@@ -32,6 +32,7 @@ const name = [
 
 const arr = [];
 
+// TODO: заменить на forEach
 name.map ((item, index) => {
     arr.push (
         <a href={link[index]}>
@@ -43,6 +44,7 @@ name.map ((item, index) => {
 });
 
 export const IconMenu = (props) => {
+    // TODO: писать логику класса внутри класса, а не снаружи
 return (
     <div className="iconMenu"
          style={{ display: props.show ? 'flex' : 'none'}}>

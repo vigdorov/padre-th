@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Modal from "./modal";
 
 const ModalSendMsg = props => {
+  // TODO: извлекаем из объекта -
+  // const { name, title, comment } = props.form;
   const name = `${props.form.name}, `;
   const titleMsg = `${props.form.title} `;
   const commentText = `${props.form.comment} `;
