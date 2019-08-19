@@ -23,24 +23,23 @@ const SliderImages = props => {
 
   return (
     <div className="slider-images"
-         style={{ display: props.show ? 'block' : 'none' }}
+         style={{ display: props.show ? 'flex' : 'none' }}
          onClick={handleBackgroundClick}
     >
       <div className="slider-images__body">
         <button name="left-btn"
-                className="slider-images__button"
+                className="slider-images__button__left"
                 onClick={handleChangePage}
         >
-          НАЛЕВА
         </button>
 
         <img src={props.image} alt="кролик" className="slider-images__img"/>
 
         <button name="right-btn"
-                className="slider-images__button"
+                className="slider-images__button__right"
                 onClick={handleChangePage}
         >
-          ПРАВА
+
         </button>
       </div>
     </div>

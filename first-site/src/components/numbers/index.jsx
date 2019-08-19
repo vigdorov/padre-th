@@ -1,8 +1,8 @@
 import React from 'react';
-import Portfolio from '../../assets/svg/portfolio.svg';
-import Clock from '../../assets/svg/clock.svg';
-import Star from '../../assets/svg/star.svg';
-import Like from '../../assets/svg/like.svg';
+import Portfolio from '../../assets/svg/portfolio.png';
+import Clock from '../../assets/svg/clock.png';
+import Star from '../../assets/svg/star.png';
+import Like from '../../assets/svg/like.png';
 import PropTypes from 'prop-types';
 
 const type = {

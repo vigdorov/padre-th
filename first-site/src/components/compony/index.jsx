@@ -1,8 +1,8 @@
 import React from 'react';
-import Company1 from '../../assets/svg/company-01.svg';
-import Company2 from '../../assets/svg/company-02.svg';
-import Company3 from '../../assets/svg/company-03.svg';
-import Company4 from '../../assets/svg/company-04.svg';
+import Company1 from '../../assets/svg/company-01.png';
+import Company2 from '../../assets/svg/company-02.png';
+import Company3 from '../../assets/svg/company-03.png';
+import Company4 from '../../assets/svg/company-04.png';
 
 const type = {
     'company1': Company1,
