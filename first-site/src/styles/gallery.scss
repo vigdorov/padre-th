@@ -47,17 +47,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
 
   &__body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 55%;
+    max-width: 55%;
     padding: 10px;
-    background-color: $color-primary;
-    border: 2px solid $color-light-secondary;
-    border-radius: 10px;
+
+
   }
   &__button {
       &__left {
@@ -67,11 +66,40 @@
     &__right {
       background: none;
       border: 50px solid transparent; border-left: 30px solid $color-light;
+
     }
   }
 
   &__img {
+    display: flex;
     margin: 0 20px;
+    border-radius: 10px;
+    min-width: 250px;
+
   }
 
+}
+@media screen and (max-width: 700px) {
+  .slider-images {
+    &__body {
+      flex-direction: column;
+    }
+    &__img {
+      max-width: 250px;
+    }
+    &__button {
+      &__left {
+        margin: 10px;
+        background: none;
+        border: 30px solid transparent; border-right: 20px solid $color-light;
+        transform: rotate(90deg);
+      }
+      &__right {
+        margin: 10px;
+        background: none;
+        border: 30px solid transparent; border-left: 20px solid $color-light;
+        transform: rotate(90deg);
+      }
+    }
+  }
 }

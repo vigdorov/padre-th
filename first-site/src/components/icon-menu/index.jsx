@@ -33,7 +33,7 @@ const name = [
 const arr = [];
 
 // TODO: заменить на forEach
-name.map ((item, index) => {
+name.forEach ((item, index) => {
     arr.push (
         <a href={link[index]}>
          <img className="iconMenu__img"
