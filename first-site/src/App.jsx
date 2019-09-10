@@ -233,24 +233,16 @@ class App extends Component {
                 <a name="testimonials"/>
               <div className="line-box">
                   <div className="work-options">
-                      <div className="company">
-                          <ComponyImg name='company1'/>
-                      </div>
+                      <ComponyImg name='company1'/>
                   </div>
                   <div className="work-options">
-                      <div className="company">
-                          <ComponyImg name='company2'/>
-                      </div>
+                      <ComponyImg name='company2'/>
                   </div>
                   <div className="work-options">
-                      <div className="company">
-                          <ComponyImg name='company3'/>
-                      </div>
+                      <ComponyImg name='company3'/>
                   </div>
                   <div className="work-options">
-                      <div className="company">
-                          <ComponyImg name='company4'/>
-                      </div>
+                      <ComponyImg name='company4'/>
                   </div>
 
 
